@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 600px;
+            height: 1300px;
+            margin: 0 auto;
+            border: 1px solid black;
+            background-color: rgb(212, 214, 240);
+            border-radius: 10px;
+        }
+        .img{
+            width: 400px;
+            height: 400px;  
+            margin: 0 auto;
+            border: 1px solid black;
+            margin-top: 30px;
+            background-image:url('https://image11.coupangcdn.com/image/cmg/oms/banner/7f945313-1d47-40b4-b222-ee4e4fe5a825_1280x949.jpg');
+            background-size: 100%;
+        }
+        .info{
+            width: 67%;
+            margin: 0 auto;
+        }
+        .order{
+            /*border: 1px solid black;*/
+            width: 67%;
+            margin: 0 auto;
+            
+            margin-top: 40px;
+        }
+        .order input{
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .or{
+            padding: 60px;
+            margin-top: 40px;
+        }
+        .a{
+            width: 30px;
+            height: 30px;
+            border: 1px solid black;
+            padding: 60px;
+        }
+        .b{
+            width: 30px;
+            height: 30px;
+            border: 1px solid black;
+            padding: 120px;
+        }
+
+        .others{
+            display: flex;
+            justify-content: center;
+        }
+        .parent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  /*border: 1px solid black;*/
+  margin: 1px;
+  padding: 10px;
+  height: 100px;
+}
+.child {
+  width: 100px;
+  height: 100px;
+  background-color: skyblue;
+  border: 1px solid black;
+}
+
+    </style>
+</head>
+<body>
+    <!--주문영역-->
+    <div class="wrap">
+
+    <!--이미지 영역-->
+    <div class="img"></div>
+
+    <!--상품정보-->
+    <div class="info">
+        <h2>켈로그x프링글스!<br>
+        대박세일</h2>
+    </div>
+
+    <div class="order"> 주문내역
+            <div> 주문자 이름 <br>  <input type="text"></div>
+            <div>주소<br> <input type="text"></div>
+            <div>상품
+                <select>
+                    <option value="">선택하세요</option>
+                    <option value="">오리지널</option>
+                    <option value="">어니언</option>
+                    <option value="">치즈</option>
+                </select>
+            </div>
+            <div> 수량
+                  <select>
+                     <option value="">수량을 선택하시요</option>
+                     <option value="">1</option>
+                     <option value="">2</option>
+                     <option value="">4</option>
+                     <option value="">5</option>
+                     <option value="">6</option>
+                     <option value="">7</option>
+                     <option value="">8</option>
+                     <option value="">9</option>
+                     <option value="">10</option>
+                  </select>
+            </div>
+            <div> 주문금액 <input type="text"></div>
+            <div> <button> 주문하기</button></div>
+            </div>
+
+            <div class="or">비슷한 상품</div>
+            
+
+            <div class='parent'>
+            <div class='child'>a</div>
+            <div class='child'>b</div>
+            </div>
+
+            </div>
+</body>
+</html>
