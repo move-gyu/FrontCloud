@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 1150px;
+            margin: 0 auto;
+        }
+        .wrap1{
+            width: 700px;
+            
+            border: 1px solid black;
+            
+            border-radius: 10px;
+            position: relative;
+            
+        }
+        /*검색바*/
+        ul{
+            list-style: none;
+            display: flex;
+            
+        }
+        .naver img{
+            
+            width: 38px;
+            height: 38px;
+            position: absolute;
+            left: 5px;
+        }
+        .search-bar input {
+        width: 575px;  
+        height: 35px;  
+        font-size: 16px;
+        padding-left: 10px;
+        border-style: none;
+        border-radius: 5px;
+        
+        
+        }
+        .search button{
+            
+            position: absolute;
+            right: 5px;
+            
+        }
+        .search-bar img{
+            width: 35px;
+            height: 35px;
+        }
+       /*검색창 밑에 요소들*/
+       .btn-wrap{
+            width: 700px;
+            height: 40px;
+            
+            
+            margin-top: 5px;
+       }
+       
+        .btn-wrap ul {
+             list-style: none;
+             display: flex;
+             padding: 0;
+             margin: 0;
+             
+            }
+
+        .btn-wrap .btn {
+             height: 35px;
+             flex: 1; /* 동일한 크기로 분배 */
+             margin: 0 5px; /* 버튼 간 약간의 여백 */
+             font-size: 16px;
+             border-radius: 17px;
+             border: 1px solid #ccc;
+             cursor: pointer;
+             
+            }
+        .btn-wrap .nbtn{
+            width: 30px;
+            height: 30px;
+            margin-top: 4px;
+        }    
+        /*영화박스 영역*/
+        .movie-wrap{
+            width: 1150px;
+            height: 1000px;
+            margin-top: 25px;
+        
+
+            display: flex;
+            position: relative;
+        }
+        /*라이언 영화 영역*/
+        .ryan-wrap{
+            width: 700px;
+            height: 1000px;
+            border: 1px solid black;
+            border-radius: 10px;
+            }
+        .mbox1{
+            width: 670px;
+            height: 50px;
+            
+            margin: 0 auto;
+
+            display: flex;
+        }
+        .mbox1 ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        .mbox1 li {
+         margin: 0;
+         padding: 0;
+        }
+        .mbox1 h4{
+            margin: 10px;
+            color: white;
+        }
+        .mbox1 .lbtn{
+             font-size: 14px;
+             border-radius: 10px;
+             border: 1px solid #ccc;
+             background-color: #725649;
+             color: white;
+             
+        }
+        .ryan-wrap p{
+            margin: 23px;
+            margin-top: -10px;
+            color: white;
+        }
+
+        .mbox2{
+           
+            width: 670px;
+            height: 40px;
+            
+            margin-top: -1px;
+            margin: 0 auto;
+        }
+        .mbox2 ul {
+             list-style: none;
+             display: flex;
+             padding: 0;
+             margin: 0;
+        }
+
+        .mbox2 .mbtn{
+            height: 35px;
+             flex: 1; /* 동일한 크기로 분배 */
+             margin: 0 5px; /* 버튼 간 약간의 여백 */
+             font-size: 14px;
+             border-radius: 17px;
+             border: 0.1px solid #ccc;
+             cursor: pointer;
+             background-color: #c28e76;
+             color: white;
+        }
+
+        .mbox3{
+            width: 700px;
+            height: 250px;
+            
+
+            display: flex;
+        }
+        .mbox3 .img1{
+            width: 60%;
+            height: 100%;
+           
+
+            background-image: url("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20120225_88%2Fwownys_1330174820684GUxvR_JPEG%2F%25B0%25ED%25C1%25F6%25C1%25A1%25B7%25C9%25C0%25FC.jpg&type=sc960_832");
+            background-size: 120%;
+        }
+         .mbox3 .img2{
+            width: 40%;
+            height: 100%;
+            
+
+            background-image: url("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20100225_272%2Fskyblue5852_1267068938194pCOYM_jpg%2Fsaving.private.ryan.1998.dvdrip.xvid.ac3.cd2-cipa.avi_003017684_skyblue5852.jpg&type=a340");
+            background-size: 160%;
+        }
+        .movie-wrap .ryan-wrap2{
+            background-color: #725649;
+            
+        }
+
+        .mbox4{
+            width: 700px;
+            height: 250px;
+            border: 1px solid black;
+            color: black;
+        }
+
+        /*추천영화 영역*/
+        .else-wrap{
+            width: 400px;
+            height: 1000px;
+            border: 1px solid black;
+            border-radius: 10px;
+            position: absolute;
+            right: 0px;
+        }
+     
+    </style>
+</head>
+<body>
+    <div class="box">
+    <!--검색 바-->
+    <div class="wrap1">
+        <ul>
+            <li class="naver"><img src="data:image/jpeg;base64,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" ></li>
+            <li class="search-bar"><input type="text"></li>
+            <li class="search">
+                <button><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMHVb00qUw-hprU5TGsWiis_wCLXKOLs1hrQ&s" width="35px" height="35px;"></button>
+            </li>
+        </ul>
+        
+    </div>
+    <!--검색바 밑에 버튼-->
+    <div class="btn-wrap">
+        <ul>
+            <li><button class="btn">블로그</button></li>
+            <li><button class="btn">카페</button></li>
+            <li><button class="btn">이미지</button></li>
+            <li><button class="btn">지식iN</button></li>
+            <li><button class="btn">인플루언서</button></li>
+            <li><button class="btn">동영상</button></li>
+            <li><button class="btn">쇼핑</button></li>
+            <li><button class="btn">뉴스</button></li>
+            <li><button class="btn">어학사전</button></li>
+            <li><button class="btn">도서</button></li>
+            <li><button class="nbtn">></button></li>
+            
+        </ul>
+    </div>
+
+    <!--영화 박스-->
+    <div class="movie-wrap">
+        <!--라이언일병 구하기 영화소개 박스-->
+        <div class="ryan-wrap">
+            <div class="ryan-wrap2">
+            <div class="mbox1">
+                <ul>
+                    <li><h4>라이언 일병 구하기</h4></li>
+                    <li class="live"><button class="lbtn">상영중</button> </li>
+                </ul>
+            </div>
+
+            <div><p>영화 · Saving private Ryan · 1998</p></div>
+
+            <div class="mbox2">
+                <ul>
+                    <li><button class="mbtn">전체</button></li>
+                    <li><button class="mbtn">기본정보</button></li>
+                    <li><button class="mbtn">출연/제작진</button></li>
+                    <li><button class="mbtn">상영일정</button></li>
+                    <li><button class="mbtn">관람평</button></li>
+                    <li><button class="mbtn">무비클립</button></li>
+                    <li><button class="mbtn">포토</button></li>
+                    <li><button class="mbtn">리뷰</button></li>
+                    <li><button class="mbtn">보러가기</button></li>
+                    <li><button class="mbtn">></button></li>
+                </ul>
+            </div>
+
+            <div class="mbox3">
+                <div class="img1"></div>
+                <div class="img2"></div>
+            </div>
+            </div>
+            <div class="mbox4">
+                <p><span style="color: rgb(153, 146, 146);">개요</span><span style="color:black;">드라마·미국·169분</p>
+                <p>ㅁㅇㄴㄴㅇ</p>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!--다른영화 추천 박스-->
+        <div class="else-wrap"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+</body>
+</html>
+
+상영중 위치조정부터
