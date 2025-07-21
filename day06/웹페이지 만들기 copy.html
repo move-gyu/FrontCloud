@@ -1,0 +1,246 @@
+
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <style>
+        .potato{
+            width: 1360px;
+            height: 45px;
+            /*border: 1px solid black;*/
+            margin: 0 auto;
+            margin-top: 20px;
+           
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            
+            padding: 0;
+            margin: 0;
+        }
+
+        .po-img img {
+            width: 40px;
+            height: 40px;
+        }
+
+        li {
+            font-size: 30px;
+            line-height: 20px; 
+            margin-left: 5px;  
+        }
+        .po-font{
+            margin: 8px;
+            font-family: "Winky Rough", sans-serif;
+        }
+
+        /*큰 박스*/
+        .wrap{
+            width: 1360px;
+            height: 1400px;
+            border: 1px solid black;
+            margin: 0 auto;
+            margin-top: 100px;
+
+            
+        }
+        /*검색박스*/
+        .wrap .search-box{
+            width: 850px;
+            /*height: 100px;*/
+            margin: 0 auto;  
+            /*border: 1px solid black;*/
+            
+
+            display: flex;
+            position: relative;
+        }
+        li .position-btn{
+            border-radius: 30px;
+            background-color: black;
+            color: white;
+            width: 115px;
+            height: 45px;
+            font-size: 20px;
+        }
+   
+        li .position-btn:hover{
+            background-color: rgb(163, 158, 158);
+        }
+        
+        .hidden{
+            width: 100px;
+            height: 150px;
+            padding: 10px;
+            border: 1px solid black;
+            
+            position: absolute;
+            left: 0px;
+            top: 50px;
+            display: none;
+        }
+        .hidden li{
+            font-size: 10px;
+            margin-bottom: 5px;
+        }
+        .position-btn:hover  .hidden{
+            display: block;
+        }
+        
+        
+
+        /*검색바*/
+        .search-bar{
+            display: flex;
+        }
+
+         .seac{
+            width: 600px;
+            height: 45px;
+            border-radius: 30px;
+            font-size: 20px;
+           
+
+            
+        }
+        .search-btn{
+            border-radius: 50px;
+            width: 45px;
+            height: 45px;
+            background-color: black;
+            color: white;
+            font-size: 20px;
+        }
+        
+        /*검색바 아래영역>*/
+        .sub-search{
+            width: 580px;
+            height: 30px;
+            /*border: 1px solid black;*/
+            margin: 0 auto;
+            margin-top: 5px;
+          
+        }
+        .sub-search li{
+            font-size: 9px;
+        }
+        .sub-search .sub{
+            border: none;
+            background-color: white;
+            cursor: pointer;
+        }
+        li p{
+            font-size: 15px;
+           margin: 2px 2px 2px 2px;
+        }
+
+        /*키워드 영역*/
+        .keyword{
+            width: 1000px;
+            height: 150px;
+            border: 1px solid black;
+            margin: 0 auto;
+            margin-top: 100px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap; 
+            justify-content: center;  
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .key-box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            border-radius: 15px;
+            background-color: rgb(240, 234, 234);
+            cursor: pointer;
+        }
+       .position-btn:hover{
+            background-color: rgb(163, 118, 81);
+            
+       }
+    </style>    
+   
+</head>
+<body>
+    <div class="potato">
+        <ul>
+            <li class="po-img"><img src="https://media.istockphoto.com/id/1189117812/ko/%EB%B2%A1%ED%84%B0/%EB%A7%8C%ED%99%94-%EC%8A%A4%ED%83%80%EC%9D%BC%EC%9D%98-%EC%9E%AC%EB%AF%B8%EC%9E%88%EB%8A%94-%EA%B0%90%EC%9E%90%EC%9D%98-%EB%B2%A1%ED%84%B0-%EA%B7%B8%EB%A6%BC.jpg?s=612x612&w=0&k=20&c=n0AcE6mCnke3uVuLtrJj1SRTFvB4jADDfV9RIWFfp5w="></li>
+            <li  class="po-font">감자마켓</li>
+        </ul>
+    </div>
+    <hr>
+    <!--큰 틀-->
+    <div class="wrap">
+        <!--검색바-->
+        <div class="search-box">
+            <ul>
+                <li><button class="position-btn">위치▽</button></li>
+                <li><ul class="hidden"></ul></li>
+           
+                <li class="search-bar">
+                    <ul>
+                        <li><input type="text" class="seac"></li>
+                        <li><button class="search-btn">></button>
+                        <ul class="hidden">
+                            <li><input type="checkbox">동교동</li>
+                            <li><input type="checkbox">서교동</li>
+                            <li><input type="checkbox">연남동</li>
+                             <li><input type="checkbox">연희동</li>
+                            <li><input type="checkbox">합정동</li>
+    </ul></li>
+                    </ul>
+                </li>
+            </ul>
+    
+        </div>
+    
+
+    <!--인기검색어-->
+    <div class="sub-search">
+        <ul>
+            <li><p>인기검색어<p></p></li>
+            <li><button class="sub">에어컨</button></li>
+            <li><button class="sub">노트북</button></li>
+            <li><button class="sub">책상</button></li>
+            <li><button class="sub">핸드폰</button></li>
+            <li><button class="sub">원룸</button></li>
+            <li><button class="sub">이사짐 알바</button></li>
+            <li><button class="sub">동호회</button></li>
+             <li><button class="sub">친목</button></li>
+            <li><button class="sub">동네친구</button></li>
+        </ul>
+    </div>
+   
+    <!--카테고리-->
+    <div class="keyword">
+        <button class="key-box">의류</button>
+    <button class="key-box">가방</button>
+    <button class="key-box">액세서리</button>
+    <button class="key-box">스포츠</button>
+    <button class="key-box">가구</button>
+    <button class="key-box">디지털</button>
+    <button class="key-box">기타</button>
+
+        
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+</body>
+</html>
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+</body>
+</html>

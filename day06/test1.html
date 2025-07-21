@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .a{
+
+
+            position: relative;
+
+        }
+
+        .hidden{
+            border: 1px solid black;
+            background-color: aliceblue;
+
+            position: absolute;
+            top: 20px;
+            left: 50px;
+
+
+            display: none;
+
+            z-index: 99;
+        }
+
+
+        .a:hover  .hidden{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">
+        <button>위치</button>
+
+        <!--히든-->
+        <div  class="hidden">
+            <ul>
+                <li><input type="checkbox">  서교동</li>
+                 <li><input type="checkbox">  서교동</li>
+                  <li><input type="checkbox">  서교동</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione amet nemo dolorum labore asperiores eligendi, impedit laudantium vero illo exercitationem id, repellat voluptatibus tempore nesciunt nisi voluptatem! Tempore, assumenda alias.
+</body>
+</html>
