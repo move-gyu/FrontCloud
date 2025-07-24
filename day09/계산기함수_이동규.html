@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>계산기</h1>
+<body>
+    <script>
+        function 계산기(num1,num2,bu){
+            
+            let result;
+
+        switch (bu) {
+            case "+":
+                result=num1+num2;
+                break;
+
+            case "-":
+                result=num1-num2;
+                break;
+                
+            case "*":
+                result=num1*num2;
+                break;
+               
+            case "/":
+                result=num1/num2;
+                break;
+            default:
+                result="올바른 연산자를 입력";
+        }
+        return result;
+        }
+        let num1=parseInt(prompt("첫번째 숫자:"));
+        let num2=parseInt(prompt("두번째 숫자:"));
+        let bu=prompt("연산자를 입력하세요:");
+        document.write("계산결과:"+계산기(num1,num2,bu));
+    </script>
+</body>
+</html>

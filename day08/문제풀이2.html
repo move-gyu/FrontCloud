@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         /*
+         // 사과
+         let apple=parseInt(prompt("무게입력:"));
+       if(apple>200){
+        alert("고급");
+       }else{
+        alert("일반");
+       }
+       if(apple%3==0){
+        document.write("3의 배수입니다");
+       }else{
+        document.write("3의 배수가 아닙니다");
+       }*/
+
+
+        /*
+        //숫자게임
+        let ranNum=Math.floor(Math.random()*100)+1;
+        
+        let count=0;
+        let num =0;
+        while(num!=ranNum){
+            num=parseInt(prompt("정답은?"));
+            if(num==ranNum){
+                alert("정답");
+                break;
+            }else if(num>ranNum){
+                alert("down");
+            }else{
+                alert("up");
+            }
+            count+=1;
+        }
+        alert(count+"번만에 맞히셨네요^^");
+        */
+
+        //숫자삼각형
+        /*let userNum=parseInt(prompt("숫자 입력:"));
+
+        for(let i=1; i<=userNum; i++){
+            for(let j=1; j<=i; j++){
+                document.write(j);
+            }
+            document.write("<br>");
+        }*/
+       
+        /*
+        //원
+        let 지름=parseFloat(prompt("지름 입력:"));
+        원주율=지름*3.14;
+        alert("원주율:"+원주율);
+        r=지름/2;
+        원의넓이=r*r*3.14;
+        alert(원의넓이);
+        */
+
+
+        //홀짝 합
+        let uNum=parseInt(prompt("숫자 입력:"));
+        let hhap=0;
+        let jhap=0;
+        for(let k=1; k<=uNum; k++){
+            if(uNum%2==1){
+                hhap+=k;
+            }else if(uNum%2==0){
+                jhap+=k;
+            }
+        }
+        alert("홀수의합"+hhap+"짝수의합"+jhap);
+    </script>
+</body>
+</html>
