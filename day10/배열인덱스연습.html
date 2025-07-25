@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let 동물=["사자","코끼리","토끼","원숭이","호랑이"];
+
+        let 입력 = prompt("동물 이름을 입력하세요:");
+        let 찾음 = false;
+        for (let i = 0; i < 동물.length; i++) {
+            if(동물[i]==입력){
+                alert(`"${입력}"의 위치는 [${i}]입니다.`);
+                    찾음 = true;
+                    break;
+            }
+            
+        }
+         if (!찾음) {
+        alert("해당 동물은 배열에 없습니다.");
+    }
+
+    </script>
+</body>
+</html>

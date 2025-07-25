@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let 과일 = ["사과", "배", "포도"];
+
+    function 과일박스(num) {
+        if(num >= 0 && num < 과일.length){
+            return 과일[num];
+        } else {
+            return "잘못된 번호입니다";
+        }
+    }
+
+    let 결과 = 과일박스(1);
+    alert(결과);
+    </script>
+</body>
+</html>

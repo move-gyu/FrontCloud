@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let 동물 = [
+        [
+            ["사자", "호랑이", "표범"],
+            ["고양이", "개", "늑대"],
+            ["여우", "하이에나", "재규어"]
+        ],
+        [
+            ["코끼리", "하마", "코뿔소"],
+            ["기린", "소", "말"],
+            ["양", "염소", "돼지"]
+        ],
+        [
+            ["캥거루", "코알라", "오리너구리"],
+            ["독수리", "매", "부엉이"],
+            ["펭귄", "물개", "돌고래"]
+        ]
+    ];
+
+    let 입력 = prompt("동물 이름을 입력하세요:");
+    let 찾음 = false;
+
+    for (let i = 0; i < 동물.length; i++) {
+        for (let j = 0; j < 동물[i].length; j++) {
+            for (let k = 0; k < 동물[i][j].length; k++) {
+                if (동물[i][j][k] === 입력) {
+                    alert(`"${입력}"의 위치는 [${i}][${j}][${k}]입니다.`);
+                    찾음 = true;
+                    break;
+                }
+            }
+            if (찾음) break;
+        }
+        if (찾음) break;
+    }
+
+    if (!찾음) {
+        alert("해당 동물은 배열에 없습니다.");
+    }
+
+    
+    </script>
+</body>
+</html>
