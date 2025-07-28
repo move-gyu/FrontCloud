@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function 동물(i,j,k){
+        let animals=[
+            [ 
+                ["호랑이", "사자", "코끼리"],
+                ["토끼", "다람쥐", "여우"],
+                ["늑대", "곰", "판다"]
+            ],
+            [ 
+                ["기린", "하마", "얼룩말"],
+                ["낙타", "캥거루", "코알라"],
+                ["침팬지", "고릴라", "원숭이"]
+            ],
+            [ 
+                ["돼지", "소", "말"],
+                ["개", "고양이", "쥐"],
+                ["닭", "오리", "거위"]
+            ]
+        ];
+    return animals[i][j][k];
+    }
+
+    let result=동물(0,1,2);
+    document.write(result);
+    </script>
+</body>
+</html>

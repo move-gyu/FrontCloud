@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      function order(i, j, k) {
+        let market = [
+            [ // 날짜 28일
+                ["이마트", "사과"],      // 마트 0
+                ["롯데마트", "딸기"],    // 마트 1
+                ["코스트코", "포도"]     // 마트 2
+            ],
+            [ // 날짜 29일
+                ["이마트", "딸기"],
+                ["롯데마트", "포도"],
+                ["코스트코", "사과"]
+            ],
+            [ // 날짜 30일
+                ["이마트", "포도"],
+                ["롯데마트", "사과"],
+                ["코스트코", "딸기"]
+            ]
+        ];
+        return market[i][j][k];
+    }
+
+    let result = order(1, 2, 1); // 29일, 코스트코, 과일 = "사과"
+    document.write(result);
+</script>
+</body>
+</html>

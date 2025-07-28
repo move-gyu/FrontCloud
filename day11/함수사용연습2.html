@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function getFortune() {
+            const fortunes = [
+                "대박! 🍀",
+                "무난한 하루 😊",
+                "조심하세요 ⚠️",
+                "새로운 기회 등장! 🚀",
+                "잠깐 쉬어가도 좋아요 ☕",
+                "로또 사러 가세요 💸"
+            ];
+            const today = fortunes[Math.floor(Math.random() * fortunes.length)];
+            console.log(`🔮 오늘의 운세: ${today}`);
+        }
+        document.write(getFortune());
+    </script>
+</body>
+</html>

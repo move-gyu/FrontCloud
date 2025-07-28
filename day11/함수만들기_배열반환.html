@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //함수 : 코드덩어리에 이름을 붙여놓은 것
+        //함수호출을 통해서 코드가 실행됨
+
+        //기능 : 평균구하기
+        //입력 : 정수형 배열
+        //반환 : 배열의 평균 값
+
+        function 평균값(a){
+            let sum=0;
+            for(let i=0; i<a.length;i++){
+                sum+=a[i];
+            }
+            let avg=sum/a.length;
+            return avg;
+        }
+        let score=[10,20,30,40];
+        let result =(평균값(score));
+        document.write(result);
+
+        
+    </script>
+</body>
+</html>

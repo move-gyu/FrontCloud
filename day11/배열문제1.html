@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //국어점수 5개 총점과 평균 구하기
+        let scores=[90,80,77,100,89];
+
+        //합계
+        //평균
+
+        let sum = scores[0]+scores[1];+scores[2]+scores[3]+scores[4];
+        console.log(sum);
+
+        //
+        let avg;
+        avg=sum/5;
+
+        console.log(avg);
+
+        //합계 반복문
+        let total=0;
+        //total이라는 변수에 각 학생의 점수를 누적하가
+        //변수의 값을 누적할 때는 변수의 초기화가 중요함
+        for(let i=0;i<scores.length;i++){
+            total+=scores[i];
+        }
+        console.log(total);
+        let avg2=total/5;
+        console.log(avg2);
+
+
+        //배열의 값 누적하기
+        let arr=[1,2,3];
+
+        //
+        let arrTotal=0;
+        arrTotal=arr[0]+arr[1]+arr[2];
+        console.log(arrTotal);
+
+        arrTotal=0;
+        for(let i=0; i<arr.length;i++){
+            arrTotal+=arr[2];
+        }
+        console.log(arrTotal);
+    </script>
+</body>
+</html>
