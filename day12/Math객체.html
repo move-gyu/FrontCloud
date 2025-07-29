@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Math객체 사용하기
+
+        //0~1미만의 임의 실수
+        let num=Math.random();
+        console.log(num);
+
+        //배열에서 임의의 index만들기(10개=> index :0~9)
+        let num2=Math.random()*10;
+        console.log(num2);
+
+        //소수점 없애기
+        let num3=Math.floor(num2);
+        console.log(num3);
+
+        //최대값
+        let result=Math.max(2,5);
+        console.log(result);
+
+         //최소값
+        let result2=Math.min(2,5);
+        console.log(result2);
+
+        //제곱근
+        let result3=Math.sqrt(10);
+        console.log(result3);
+
+        //배열에서 가장 큰 값
+        let scores=[10,20,30,40,50];
+        let result4=Math.max(...scores);    //...연산자 : 스프레드 연산자
+        console.log(result4);
+
+
+
+    </script>
+</body>
+</html>

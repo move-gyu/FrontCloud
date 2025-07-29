@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         const cat ={
+            
+            name : "제로",
+            spacies : "고양이",
+            age : 5,
+            weight : 5,
+            likesFood : "츄르",
+            printInfo : function(){
+            alert (`${this.name} ${this.age} 살 입니다. 현재 ${this.weight}kg 입니다. 다이어트 중 입니다.`);
+            },
+            eat : function(food){
+                if(food==="츄르") {
+                alert("그릉거리며 좋아함");
+                this.weight =this.weight+1;
+                alert(`체중이 1kg 증가하여 현재 ${this.weight} kg 입니다.`);
+            }},
+            sports : function(workout) {
+                if(workout === "캣휠"){
+
+                alert("고양이가 헥헥 거리면서 캣휠을 돌고 있습니다")
+                this.weight=this.weight-1;
+                alert(`체중이 1kg 감소하여 현재 ${this.weight} kg 입니다.`);
+            }
+
+         }
+        }
+
+        cat.printInfo();
+        cat.eat("츄르");
+        cat.sports("캣휠");
+
+
+
+
+    </script>
+</body>
+</html>
