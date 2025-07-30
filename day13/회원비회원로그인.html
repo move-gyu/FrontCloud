@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 400px;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+        .tadMenu{
+            display: flex;
+        }
+        .tadMenu > div{
+            width: 50%;
+            border: 1px solid black;
+        }
+
+        .member{
+            border: 1px solid black;
+            height: 150px;
+        }
+
+        .nomember{
+            border: 1px solid black;
+            height: 150px;
+        }
+        .nomember{
+            display: none;
+        }
+    </style>
+
+    <script>    //회원 비회원 메뉴 선택하기
+        function showMember(){
+            const mem=document.querySelector(".member");
+            const nomem=document.querySelector(".nomember");
+
+            mem.style.display="block";
+            nomem.style.display="none";
+        }
+
+        function showNomember(){
+            const mem=document.querySelector(".member");
+            const nomem=document.querySelector(".nomember");
+
+            mem.style.display="none";
+            nomem.style.display="block";
+        }
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <!--탭메뉴-->
+        <div class="tadMenu">
+            <div onclick="showMember()">회원</div>
+            <div onclick="showNomember()">비회원</div>
+        </div>
+        <!--회원-->
+        <div class="member" style="display: block;">회원화면^^</div>
+
+        <!--비회원-->
+        <div class="nomember">비회원화면--</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+            display: flex;
+        }
+        .a1{
+            width: 600px;
+          
+        }
+        .a2{
+            width: 600px;
+            
+        }
+        .fixedBtn{
+            position: fixed;
+        }
+    </style>
+    <script>
+        let count=1;
+        let count2=1;
+        function addImg(){
+            const div=document.createElement("div");
+
+            div.style.backgroundImage='url(https://i.namu.wiki/i/8bVK4ZYAm1S_BeXemaTtE96T3fzGPHO6dC5iFuiWE5fkwffObZEqt8I63YFkIMZIKV5iLJaPSaNh7XH10Ig68g.webp)'
+            div.style.backgroundSize="cover";
+            div.style.width="300px";
+            div.style.height="300px";
+            div.style.marginTop="10px";
+
+            const number=document.createElement("p");
+            number.textContent=count+"번째 분신";
+            number.style.margin = "0";
+            number.style.fontWeight = "bold";
+            number.style.fontSize = "18px";
+            number.style.color="white";
+
+            div.appendChild(number);
+
+            const a=document.getElementById("wrap");
+
+            a.appendChild(div);
+            count++;
+        }
+
+        function addImg2(){
+            const div=document.createElement("div");
+
+            div.style.backgroundImage='url(https://i.namu.wiki/i/YxyqBrugdtxhPl4Jn_lDRMZxaq35UQQEiJMbkTcepmcFz4l2CGwuA8BPDIgmBP6yulmR8oheIXQD0bpfwWVmag.webp)'
+            div.style.backgroundSize="cover";
+            div.style.width="300px";
+            div.style.height="300px";
+            div.style.marginTop="10px";
+
+            const number=document.createElement("p");
+            number.textContent=count2+"번째 분신";
+            number.style.margin = "0";
+            number.style.fontWeight = "bold";
+            number.style.fontSize = "18px";
+            number.style.color="white";
+
+            div.appendChild(number);
+
+            const btn=document.createElement("button");
+            btn.style.width="200px";
+            btn.style.backgroundColor="blue";
+
+            const a=document.getElementById("wrap2");
+
+
+            a.appendChild(div);
+            count2++;
+        }
+    </script>
+</head>
+<body>
+    <div class="a">
+    <div class="a1">
+    <div id="wrap">
+        <img src="https://i.namu.wiki/i/8bVK4ZYAm1S_BeXemaTtE96T3fzGPHO6dC5iFuiWE5fkwffObZEqt8I63YFkIMZIKV5iLJaPSaNh7XH10Ig68g.webp" width="300px" height="300px">
+        <button class="fixedBtn" onclick="addImg()">춘봉이 분신</button>
+    </div>
+    </div>
+
+
+
+    <div class="a2">
+        <div id="wrap2">
+        <img src="https://i.namu.wiki/i/YxyqBrugdtxhPl4Jn_lDRMZxaq35UQQEiJMbkTcepmcFz4l2CGwuA8BPDIgmBP6yulmR8oheIXQD0bpfwWVmag.webp" width="300px" height="300px">
+        <button  class="fixedBtn" onclick="addImg2()">첨지 분신</button>
+    </div>
+    </div>
+   
+</div>
+</body>
+</html>
+

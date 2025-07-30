@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ch(){
+            //alert("dd");
+           const items= document.querySelectorAll(".item")
+
+           /*for(let i=0;i<items.length;i++){
+            const item=items[i];
+            item.style.backgroundColor="blue";
+            items[0].style.backgroundColor="red";
+            items[1].style.backgroundColor="blue";*/
+
+            //forEach
+            /*items.forEach(function(a){
+                a.style.backgroundColor="blue";
+            })*/
+            //화살표
+            items.forEach(a=>a.style.backgroundColor="blue");
+        }
+        
+        function unCh(){
+           // alert("ss");
+        }
+    </script>
+</head>
+<body>
+    <h2>querySelectorAll 로 요소 선택하기</h2>
+    <p>주의사항 : 모두선택하기 이므로 대상이 한 개여도 배열로 반환됨 </p>
+
+    <div class="item">i1</div>
+    <div class="item">i2</div>
+
+    <button onclick="ch()">적용</button>
+    <button onclick="unCh()">취소</button>
+</body>
+</html>

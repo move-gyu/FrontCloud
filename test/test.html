@@ -2,34 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>강아지 이미지 표시</title>
+    <script>
+        function showDogImage() {
+            const img = document.getElementById("dog");
+            img.style.display = "block"; // 이미지 보이기
+        }
+    </script>
 </head>
 <body>
-    <script>
-      function order(i, j, k) {
-        let market = [
-            [ // 날짜 28일
-                ["이마트", "사과"],      // 마트 0
-                ["롯데마트", "딸기"],    // 마트 1
-                ["코스트코", "포도"]     // 마트 2
-            ],
-            [ // 날짜 29일
-                ["이마트", "딸기"],
-                ["롯데마트", "포도"],
-                ["코스트코", "사과"]
-            ],
-            [ // 날짜 30일
-                ["이마트", "포도"],
-                ["롯데마트", "사과"],
-                ["코스트코", "딸기"]
-            ]
-        ];
-        return market[i][j][k];
-    }
+    <h2>버튼을 누르면 강아지 이미지가 나와요!</h2>
+    
+    <!-- 버튼 -->
+    <button onclick="showDogImage()">강아지 보기</button>
 
-    let result = order(1, 2, 1); // 29일, 코스트코, 과일 = "사과"
-    document.write(result);
-</script>
+    <!-- 처음에는 숨겨진 강아지 이미지 -->
+    <br><br>
+    <img id="dog" src="https://images.dog.ceo/breeds/shiba/shiba-12.jpg" alt="강아지" width="300" style="display: none;">
 </body>
 </html>

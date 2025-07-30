@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //forEach() 배열매서드, 배열이 제공하는 기능
+
+        let arr=["금100돈","오피스텔","제주도별장"];
+        for(let i=0;i<arr.length;i++){
+            let item=arr[i];
+            console.log(item);
+        }
+
+        //forEach
+
+        //callback함수를 이름있는 함수로 만들고 전달하기
+
+        function aa(item){
+            console.log(item+"^^");
+        }
+        arr.forEach(aa);
+
+
+        //callback함수를 익명함수로 만들고 저장하기
+        arr.forEach(function(item){
+            console.log(item+"~~");
+        });
+
+        //callback함수를 화살표함수 만들고 전달하기
+        arr.forEach(item=>console.log(item+"!!"));
+    </script>
+</body>
+</html>

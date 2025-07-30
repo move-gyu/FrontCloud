@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .style1{
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+        }
+        .style2{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+        }
+
+        
+    </style>
+    <script>    //클래스 추가:add, remove
+        function style1(){
+            const it1=document.querySelector(".item1");
+            it1.classList.add("style1");
+        }
+
+        function style2(){
+            const it2=document.querySelector(".item2");
+            it2.classList.add("style2");
+
+        }
+        function style3(){
+            const it1=document.querySelector(".item1");
+            it1.classList.remove("style1");
+
+        }
+
+        function style4(){
+            const it2=document.querySelector(".item2");
+            it2.classList.remove("style2");
+        }
+
+    </script>
+</head>
+<body>
+    
+    <div class="item1">스타일1</div>
+    <div class="item2">스타일2</div>
+
+    <button onclick="style1()">스타일1</button>
+    <button onclick="style2()">스타일2</button>
+
+    <button onclick="style3()">스타일1취소</button>
+    <button onclick="style4()">스타일2취소</button>
+</body>
+</html>
