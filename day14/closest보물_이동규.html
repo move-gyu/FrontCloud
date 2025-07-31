@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+            width: 400px;
+            height: 40px;
+            border: 1px solid black;
+            margin: 0 auto;
+            margin-top: 40px;
+
+        }
+        .b{
+            width: 500px;
+            height: 150px;
+            border: 1px solid black;
+            margin: 0 auto;
+            display: flex;
+            position: relative;
+        }
+        .c{
+            width: 500px;
+            height: 150px;
+            border: 1px solid black;
+            margin: 0 auto;
+            display: flex;
+            position: relative;
+        }
+        
+        .p1{
+            display: none;
+            text-align: center;
+        }
+        .p2{
+            display: none;
+        }
+       .b1{
+        position: absolute;
+        left: 90%;
+        top: 80%;
+       }
+       .b2{
+        position: absolute;
+        left: 90%;
+        top: 80%;
+       }
+
+    </style>
+
+    <script>
+       
+        function btn1(a){
+            const text1=a.closest(".b");
+            console.log(text1);
+            const content =text1.querySelector(".p1"); 
+            console.log(content);
+            console.log(content.innerHTML);
+            //출력
+            const pTag=document.createElement("p");
+            pTag.innerHTML=content.innerHTML;
+
+            const w= document.getElementById("wrap1");
+
+            w.appendChild(pTag);
+
+           
+        }
+
+        function btn2(a){
+            const text2=a.closest(".c");
+            console.log(text2);
+            const content =text2.querySelector(".p2"); 
+            console.log(content);
+            //출력
+            const pTag=document.createElement("p");
+            pTag.innerHTML=content.innerHTML;
+
+            const w= document.getElementById("wrap2");
+
+            w.appendChild(pTag);
+        }
+
+
+        </script>
+</head>
+<body>
+    <div class="a">closest를 사용하여 버튼 클릭시 보물의 내용 가져오기</div>
+
+    <div class="b">
+        <div id="wrap1" class="div1"><p class="p1">금100돈</p></div>
+        <div><button onclick="btn1(this)" class="b1">클릭</button></div>
+    </div>
+
+    <div class="c">
+        <div id="wrap2" class="div2"><p class="p2">다이아몬드10캐럿</p></div>
+        <div><button onclick="btn2(this)" class="b2">클릭</button></div>
+    </div>
+</body>
+</html>

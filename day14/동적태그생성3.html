@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .style1{
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        function addATag(){
+
+            const aTag=document.createElement("a");
+            aTag.href="https://www.naver.com";
+            aTag.target="_blank";
+            aTag.textContent="naver로!"
+            aTag.classList.add("style1");
+
+            //부모를 얻어온다
+            const w=document.getElementById("wrap");
+
+            //부모에 추가한다
+            w.appendChild(aTag);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="addATag()">a태그생성</button>
+    <div id="wrap"> </div>
+</body>
+</html>

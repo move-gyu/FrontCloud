@@ -1,0 +1,70 @@
+<!--
+    1.숫자 6개 (임의의 숫자1~45)
+    2.색 6개
+    3.공 6개
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getLottoNumber1(){
+            const getLottoNumber=[15,8,42,13,9,41];
+            return getLottoNumber;
+        }
+
+        const num=getLottoNumber1();
+        console.log(num);
+
+        function GLN(){
+            const lottoNumber=[];
+
+            /*let random=Math.floor(Math.random()*45)+1;
+            lottoNumber.push(random);
+
+             random=Math.floor(Math.random()*45)+1;
+            lottoNumber.push(random);
+
+             random=Math.floor(Math.random()*45)+1;
+            lottoNumber.push(random);
+
+             random=Math.floor(Math.random()*45)+1;
+            lottoNumber.push(random);
+
+            random=Math.floor(Math.random()*45)+1;
+            lottoNumber.push(random);
+
+             random=Math.floor(Math.random()*45)+1;
+            lottoNumber.push(random);*/
+             
+            /*for(let i=0;i<6;i++){
+                let random=Math.floor(Math.random()*45)+1;
+                lottoNumber.push(random);
+             }
+             lottoNumber.sort((a, b) => a - b);*/
+
+            return lottoNumber;
+        }
+        const num2=GLN();
+        console.log(num2);
+
+        function GLN2(){
+            const lottoNumber=[];
+
+            while(lottoNumber.length<6){
+                const ranNum=Math.floor(Math.random()*46);
+                if(!lottoNumber.includes(ranNum))
+                    lottoNumber.push(ranNum);
+            }
+            return lottoNumber;
+        }
+        
+        const result=console.log(GLN2());
+    </script>
+</body>
+</html>

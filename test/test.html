@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>강아지 이미지 표시</title>
-    <script>
-        function showDogImage() {
-            const img = document.getElementById("dog");
-            img.style.display = "block"; // 이미지 보이기
-        }
-    </script>
+  <meta charset="UTF-8">
+  <title>closest 사용 예제</title>
+  <style>
+    .item {
+      border: 1px solid black;
+      padding: 20px;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-    <h2>버튼을 누르면 강아지 이미지가 나와요!</h2>
-    
-    <!-- 버튼 -->
-    <button onclick="showDogImage()">강아지 보기</button>
+  <h3>closest를 사용하여 버튼 클릭시 보물의 내용 가져오기</h3>
 
-    <!-- 처음에는 숨겨진 강아지 이미지 -->
-    <br><br>
-    <img id="dog" src="https://images.dog.ceo/breeds/shiba/shiba-12.jpg" alt="강아지" width="300" style="display: none;">
+  <div class="item">
+    <div class="label">💥 금 100돈</div>
+    <button onclick="getTreasure(this)">클릭</button>
+  </div>
+
+  <div class="item">
+    <div class="label">💎 다이아몬드 10캐럿</div>
+    <button onclick="getTreasure(this)">클릭</button>
+  </div>
+
+  <script>
+    function getTreasure(btn) {
+      const item = btn.closest(".item"); // 가장 가까운 .item 상위 요소 찾기
+      const label = item.querySelector(".label"); // 그 안의 .label 요소 찾기
+      alert("보물: " + label.textContent); // 텍스트 가져와서 출력
+    }
+  </script>
 </body>
 </html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        .wrap {
+            border: 1px solid black;
+            width: 1000px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .gold,
+        .dia {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+
+    <script>
+        function add(info) {
+            const item = info.closest(".wrap");
+            //console.log(item);
+
+            // 이미지 선택 변수
+            const btntext = info.textContent;
+
+            const subItem = document.createElement("div");
+
+            if (btntext.includes("금")) {
+
+
+                // 금 이미지출력
+                const imgTag1 = document.createElement("img");
+                imgTag1.src = "https://media.istockphoto.com/id/490693469/ko/%EC%82%AC%EC%A7%84/%EA%B3%A8%EB%93%9C-%EC%9E%89%EA%B3%B3.jpg?s=612x612&w=0&k=20&c=Nl9xf-1JV25X01UaUPMQ2RC9viHDXnpwQBmqF5wHIxc=";
+                imgTag1.alt = "금 이미지";
+                imgTag1.style.width = "100px";
+                imgTag1.style.height = "100px";
+
+                const gold = item.querySelector(".gold");
+
+                subItem.appendChild(imgTag1);
+
+                // p태그
+                const pTag = document.createElement("p");
+                pTag.innerHTML = "금";
+                subItem.appendChild(pTag);
+
+
+                gold.appendChild(subItem);
+
+            } else if (btntext.includes("다이아")) {
+                // 다이아 이미지출력
+                const imgTag2 = document.createElement("img");
+                imgTag2.src = "https://media.istockphoto.com/id/1934303400/ko/%EC%82%AC%EC%A7%84/diamond-on-white-background-with-high-quality.jpg?s=612x612&w=0&k=20&c=PFP2grWk317nocg_tC2fjiYiD_VvXOxI9ecUGfcho3g=";
+                imgTag2.alt = "다이아 이미지";
+                imgTag2.style.width = "100px";
+                imgTag2.style.height = "100px";
+
+                const dia = item.querySelector(".dia");
+
+                subItem.appendChild(imgTag2);
+
+                // p태그
+                const pTag = document.createElement("p");
+                pTag.innerHTML = "다이아";
+                subItem.appendChild(pTag);
+
+                dia.appendChild(subItem);
+            }
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+
+
+    <h2> 버튼 눌렀을 때 이미지 생성 </h2>
+
+    <div class="wrap">
+        <div class="gold"></div>
+        <button onclick="add(this)">금 생성</button>
+    </div>
+
+    <div class="wrap">
+        <div class="dia"></div>
+        <button onclick="add(this)">다이아몬드 생성</button>
+    </div>
+
+
+</body>
+
+</html>

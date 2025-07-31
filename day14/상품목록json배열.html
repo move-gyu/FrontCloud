@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        .productList > li{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            text-align: center;
+            padding: 5px;
+        }
+        .productList > li img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+    <script>
+        function add(){
+            const productList=[
+                {
+                    img:"https://thumbnail8.coupangcdn.com/thumbnails/remote/230x230ex/image/1025_amir_coupang_oct_80k/45f6/3002745ac364dfa3e1b7661e3d9a851b566908ca9f84220d908cf70fcad7.jpg",
+                    titel:"미니선풍기",
+                    price:15000
+                },
+                {
+                    img:"https://thumbnail6.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/80870368036782-dc973a90-7102-44fc-9689-b902862ddd29.jpg",
+                    titel:"나랑드사이다",
+                    price:12500
+                }
+            ];
+
+            const productWrap=document.querySelector(".productList");
+
+            productList.forEach(function(item){
+                const li= document.createElement("li");
+                li.innerHTML=`
+                    <img src="${item.img}">
+                    <p>${item.titel}</p>
+                    <p>${item.price}</p>`;
+
+                    productWrap.appendChild(li);
+            });
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="add()">더보기</button>
+
+        <ul class="productList">
+        <!---
+        <li>
+            <img src="https://thumbnail8.coupangcdn.com/thumbnails/remote/230x230ex/image/1025_amir_coupang_oct_80k/45f6/3002745ac364dfa3e1b7661e3d9a851b566908ca9f84220d908cf70fcad7.jpg">
+            <p>미니 선풍기</p>
+            <p>15,000원</p>
+        </li>
+        <li>
+            <img src="https://thumbnail6.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/80870368036782-dc973a90-7102-44fc-9689-b902862ddd29.jpg">
+            <p>나랑드사이다 제로,245ml 30개</p>
+            <p>12,750원</p>
+        </li>-->
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function addPTag(){
+            //태그생성하기
+            const pTag=document.createElement("p");
+
+            pTag.innerHTML="새로운p태그";
+            pTag.style.fontSize="20px";
+
+            //부모영역선택
+            const w= document.getElementById("p");
+            console.log(w);
+
+            //부모영역추가하기
+            w.appendChild(pTag);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="addPTag()">p태그 생성</button>
+    <!--부모영역으로 정하기-->
+    <div id="wrap"></div>
+</body>
+</html>
