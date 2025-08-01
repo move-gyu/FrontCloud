@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <style>
+    .wrap{
+      width: 1600px;
+      height: 800px;
+      border: 1px solid black;
+      margin: 0 auto;
+      display: flex;
+      position: relative;
+    }
+    .imgWrap{
+      width: 600px;
+      height: 600px;
+      border: 1px solid black;
+      margin: 0 auto;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-image: url(members/감독.jpg);
+      background-size: cover;
+    }
+    .prev{
+      position: absolute;
+      left: 10px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid black;
+      text-align: center;
+      top: 40%;
+      cursor: pointer;
+    }
+    .next{
+      position: absolute;
+      right: 10px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid black;
+      text-align: center;
+      top: 40%;
+      cursor: pointer;
+    }
+    .btn{
+      width: 50px;
+      height: 30px;
+      position: absolute;
+      bottom: 3%;
+      left: 48.5%;
+      cursor: pointer;
+    }
+    .nameWrap{
+      width: 400px; /* 배열 길이 감안해 늘림 */
+      min-height: 75px;
+      position: absolute;
+      bottom: 7%;
+      left: 52%;
+      transform: translate(-50%, 0);
+      font-size: 18px; /* 너무 크면 줄 바꿈이 안 되므로 줄임 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 5px;
+      box-sizing: border-box;
+      border: 1px solid black;
+      background: #f9f9f9;
+      overflow-wrap: break-word;
+    }
+  </style>
+
+  <script>
+    let imgNames = [
+      "members/감독.jpg","members/선수1.jpg","members/선수2.jpg",
+      "members/선수3.jpg","members/선수4.jpg","members/선수5.jpg",
+      "members/선수6.jpg","members/선수7.jpg","members/선수8.jpg",
+      "members/선수9.jpg","members/선수10.jpg","members/선수11.jpg"
+    ];
+
+    const member = [
+      "히딩크","이운재","홍명보","최진철","김태영",
+      "박지성","이영표","유상철","이을용","황선홍",
+      "안정환","설기현"
+    ];
+
+    let index = 0;
+
+    function updateDisplay() {
+      const gallery = document.querySelector(".imgWrap");
+      gallery.style.backgroundImage = "url(" + imgNames[index] + ")";
+      const nameBox = document.querySelector(".nameWrap");
+      nameBox.textContent = member[index];
+    }
+
+    function next() {
+      index++;
+      if (index >= imgNames.length) index = 0;
+      updateDisplay();
+    }
+
+    function prev() {
+      index--;
+      if (index < 0) index = imgNames.length - 1;
+      updateDisplay();
+    }
+
+    function nameBtn(){
+      const nameBox = document.querySelector(".nameWrap");
+      nameBox.textContent = member.join(", ");
+    }
+
+    window.addEventListener("DOMContentLoaded", updateDisplay);
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <button class="prev" onclick="prev()">«</button>
+    <div class="imgWrap"></div>
+    <button class="btn" onclick="nameBtn()">정보</button>
+    <button class="next" onclick="next()">»</button>
+    <div class="nameWrap">히딩크</div>
+  </div>
+</body>
+</html>

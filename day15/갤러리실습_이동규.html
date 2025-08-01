@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 1600px;
+            height: 800px;
+            border: 1px solid black;
+            margin: 0 auto;
+
+            display: flex;
+            position: relative;
+        }
+        .imgWrap{
+            width: 600px;
+            height: 600px;
+            border: 1px solid black;
+            margin: 0 auto;
+            position: absolute;
+            
+            
+            left: 50%;
+            top: 45%;                    /* 세로 기준점 */
+            transform: translate(-50%, -50%);
+
+            
+
+            background-image: url(members/감독.jpg);
+            
+            background-size: cover;
+            transition:0.5s
+        }
+        .prev{
+            position: absolute;
+            
+            
+            left: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid black;
+            text-align: center;
+            top: 40%;
+
+        }
+        .next{
+            position: absolute;
+            top: 50%;
+            
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid black;
+            text-align: center;
+            top: 40%;
+        }
+        .btn{
+            width: 50px;
+            height: 30px;
+            position: absolute;
+            bottom: 3%;
+            left: 48.5%;
+            
+        }
+        .nameWrap{
+            width: 150px;
+            height: 75px;
+            position: absolute;
+            bottom: 7%;
+            left: 52%;
+            transform: translate(-50%);
+            /*border: 1px solid black;*/
+            font-size: 30px;
+            justify-content: center;    /* 가로 중앙 */
+            align-items: center;
+            
+        }
+    </style>
+    
+    <script>
+        let imgNames = ["members/감독.jpg","members/선수1.jpg","members/선수2.jpg","members/선수3.jpg","members/선수4.jpg","members/선수6.jpg","members/선수5.jpg","members/선수7.jpg","members/선수8.jpg","members/선수10.jpg","members/선수9.jpg","members/선수11.jpg"];
+
+        const member=["감독 : 히딩크","GK : 이운재","DF : 홍명보","DF : 최진철","DF : 김태영","DF : 이영표","MF : 박지성","MF : 유상철","MF : 이을용","FW: 안정환","FW : 황선홍","FW : 설기현"];
+
+        let index = 0;
+
+        function next() {
+            // alert("djdjf");
+            index++;  // index = index+1;
+
+
+            if( index  >= imgNames.length){
+                index=0;
+            }
+
+            const gallery = document.querySelector(".imgWrap");
+            gallery.style.backgroundImage = "url(" + imgNames[index] + ")";
+            
+            const members= document.querySelector(".nameWrap");
+            members.textContent=member[index];
+
+        }
+
+        function prev() {
+            // alert("djdjf");
+            index--;  // index = index+1;
+
+
+            if( index  < 0){
+                index = imgNames.length-1; 
+            }
+
+            const gallery = document.querySelector(".imgWrap");
+            gallery.style.backgroundImage = "url(" + imgNames[index] + ")";
+            
+            const members= document.querySelector(".nameWrap");
+            members.textContent=member[index];
+
+        }
+
+        const infoText="대한민국 축구 국가대표팀은 대한민국의 축구 국가대표팀으로 대한축구협회에 의해 구성된다. 국제 축구 연맹에서는 Korea Republic으로 호칭되며 1948년 하계 올림픽에서 처음 국제 무대에 발을 내디뎠고 1954년 FIFA 월드컵을 통해 처음 FIFA 월드컵 본선 무대를 밟은 이후 1986년 FIFA 월드컵부터 2026년 FIFA 월드컵까지 아시아 최초이자 세계에서 6번째로 11회 연속 본선에 진출했다.";
+        let a=false;
+        function nameBtn(){
+            const data=document.getElementById("dataBox");
+            if(!a){
+                const p=document.createElement("p");
+                p.className=infoText.trim();
+                data.appendChild(p);
+                a=true;
+            }else{
+                data.innerHTML="";
+                a=false;
+            }
+        }
+        
+    </script>
+
+</head>
+<body>
+    
+    <div class="wrap">
+        <button class="prev" onclick="prev()"> << </button>
+        <div class="imgWrap"></div>
+        <button class="btn" onclick="nameBtn()">정보</button>
+        <button class="next" onclick="next()">>> </button>
+        <div class="nameWrap" id="dataBox">감독:히딩크</div>
+
+    </div>
+</body>
+</html>

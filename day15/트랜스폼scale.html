@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            margin: 200px 200px 200px 200px;
+
+            overflow: hidden;
+        }
+        .item{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            background-image: url("data:image/png;base64,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");
+            background-position: center;
+            background-size: cover;
+
+            /*transition: 0.7s;*/
+        }
+        .item:hover{
+            border-radius: 50%;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <h2>scale이용해서 커지는 이미지 만들기</h2>
+    <div class="wrap">
+    <div class="item"></div>
+    </div>
+</body>
+</html>

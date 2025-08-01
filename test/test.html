@@ -1,35 +1,221 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>closest 사용 예제</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>대한민국 축구 국가대표팀 갤러리</title>
   <style>
-    .item {
-      border: 1px solid black;
-      padding: 20px;
-      margin-bottom: 10px;
+    :root {
+      --card-size: 500px;
+      --transition: 0.4s ease;
+      font-family: system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+    }
+    * { box-sizing:border-box; }
+
+    body {
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: #f5f7fa;
+      color:#222;
+    }
+    .gallery {
+      position: relative;
+      width: 90vw;
+      max-width: 1000px;
+      padding: 1rem;
+      background:#fff;
+      border-radius:12px;
+      box-shadow:0 12px 32px rgba(0,0,0,0.08);
+      display:flex;
+      flex-direction:column;
+      gap:1rem;
+      align-items:center;
+    }
+    .viewer {
+      position: relative;
+      width: var(--card-size);
+      height: var(--card-size);
+      max-width: 100%;
+      border-radius: 14px;
+      overflow:hidden;
+      background-color:#222;
+      background-size: cover;
+      background-position:center;
+      transition: background-image var(--transition);
+      display:flex;
+      align-items:flex-end;
+      padding:0.75rem;
+      color:#fff;
+      font-weight:600;
+      backdrop-filter: brightness(1);
+    }
+    .name-label {
+      background:rgba(0,0,0,0.45);
+      padding:8px 14px;
+      border-radius:8px;
+      font-size:1.25rem;
+      flex-shrink:0;
+      display:inline-block;
+    }
+    .controls {
+      margin-top: 0.75rem;
+      display:flex;
+      gap:0.5rem;
+      align-items:center;
+    }
+    .btn {
+      background:#fff;
+      border:1px solid #ccc;
+      padding:0.6rem 1rem;
+      border-radius:8px;
+      cursor:pointer;
+      font-size:1rem;
+      position: relative;
+      transition: all .2s;
+      user-select:none;
+    }
+    .btn:focus { outline:2px solid #007aff; }
+    .btn:hover { filter:brightness(1.05); }
+    .nav-btn {
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:bold;
+      font-size:1.2rem;
+      border:1px solid #888;
+      background:#f0f0f0;
+    }
+    .info-box {
+      margin-top:1rem;
+      padding:1rem;
+      border-radius:10px;
+      background:#eef2f7;
+      line-height:1.4;
+      max-width:900px;
+      position: relative;
+    }
+    .hidden { display:none; }
+    @media (max-width: 800px){
+      .viewer { width: 100%; height: auto; aspect-ratio:1/1; }
+      .name-label { font-size:1rem; }
+      .btn { padding:0.5rem .85rem; font-size:.9rem; }
     }
   </style>
 </head>
 <body>
-  <h3>closest를 사용하여 버튼 클릭시 보물의 내용 가져오기</h3>
-
-  <div class="item">
-    <div class="label">💥 금 100돈</div>
-    <button onclick="getTreasure(this)">클릭</button>
-  </div>
-
-  <div class="item">
-    <div class="label">💎 다이아몬드 10캐럿</div>
-    <button onclick="getTreasure(this)">클릭</button>
+  <div class="gallery" aria-label="선수 갤러리">
+    <div class="viewer" id="viewer" role="img" aria-label="감독 : 히딩크">
+      <div class="name-label" id="nameLabel">감독 : 히딩크</div>
+    </div>
+    <div class="controls" aria-label="갤러리 컨트롤">
+      <button class="btn nav-btn" id="prevBtn" aria-label="이전" title="이전 (왼쪽 화살표)">‹</button>
+      <button class="btn" id="infoBtn" aria-label="정보 보기" title="정보 보기 / 숨기기">정보</button>
+      <button class="btn nav-btn" id="nextBtn" aria-label="다음" title="다음 (오른쪽 화살표)">›</button>
+    </div>
+    <div class="info-box hidden" id="infoBox" aria-live="polite">
+      대한민국 축구 국가대표팀은 대한민국의 축구 국가대표팀으로 대한축구협회에 의해 구성된다. 국제 축구 연맹에서는 Korea Republic으로 호칭되며 1948년 하계 올림픽에서 처음 국제 무대에 발을 내디뎠고 1954년 FIFA 월드컵을 통해 처음 FIFA 월드컵 본선 무대를 밟은 이후 1986년 FIFA 월드컵부터 2026년 FIFA 월드컵까지 아시아 최초이자 세계에서 6번째로 11회 연속 본선에 진출했다.
+    </div>
   </div>
 
   <script>
-    function getTreasure(btn) {
-      const item = btn.closest(".item"); // 가장 가까운 .item 상위 요소 찾기
-      const label = item.querySelector(".label"); // 그 안의 .label 요소 찾기
-      alert("보물: " + label.textContent); // 텍스트 가져와서 출력
+    // 데이터
+    const imgNames = [
+      "members/감독.jpg",
+      "members/선수1.jpg",
+      "members/선수2.jpg",
+      "members/선수3.jpg",
+      "members/선수4.jpg",
+      "members/선수6.jpg",
+      "members/선수5.jpg",
+      "members/선수7.jpg",
+      "members/선수8.jpg",
+      "members/선수10.jpg",
+      "members/선수9.jpg",
+      "members/선수11.jpg"
+    ];
+    const memberLabels = [
+      "감독 : 히딩크",
+      "GK : 이운재",
+      "DF : 홍명보",
+      "DF : 최진철",
+      "DF : 김태영",
+      "DF : 이영표",
+      "MF : 박지성",
+      "MF : 유상철",
+      "MF : 이을용",
+      "FW : 안정환",
+      "FW : 황선홍",
+      "FW : 설기현"
+    ];
+    const infoText = "대한민국 축구 국가대표팀은 대한민국의 축구 국가대표팀으로 대한축구협회에 의해 구성된다. 국제 축구 연맹에서는 Korea Republic으로 호칭되며 1948년 하계 올림픽에서 처음 국제 무대에 발을 내디뎠고 1954년 FIFA 월드컵을 통해 처음 FIFA 월드컵 본선 무대를 밟은 이후 1986년 FIFA 월드컵부터 2026년 FIFA 월드컵까지 아시아 최초이자 세계에서 6번째로 11회 연속 본선에 진출했다.";
+
+    let index = 0;
+    let lock = false; // 간단한 디바운스
+
+    const viewer = document.getElementById("viewer");
+    const nameLabel = document.getElementById("nameLabel");
+    const infoBox = document.getElementById("infoBox");
+
+    // 이미지 미리 로드
+    imgNames.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+
+    function updateDisplay() {
+      const label = memberLabels[index] || "";
+      viewer.style.backgroundImage = `url(${imgNames[index]})`;
+      viewer.setAttribute("aria-label", label);
+      nameLabel.textContent = label;
     }
+
+    function next() {
+      if (lock) return;
+      lock = true;
+      index = (index + 1) % imgNames.length;
+      updateDisplay();
+      setTimeout(() => { lock = false; }, 200);
+    }
+
+    function prev() {
+      if (lock) return;
+      lock = true;
+      index = (index - 1 + imgNames.length) % imgNames.length;
+      updateDisplay();
+      setTimeout(() => { lock = false; }, 200);
+    }
+
+    function toggleInfo() {
+      infoBox.classList.toggle("hidden");
+    }
+
+    // 초기 세팅
+    updateDisplay();
+    infoBox.textContent = infoText;
+
+    // 이벤트 연결
+    document.getElementById("nextBtn").addEventListener("click", next);
+    document.getElementById("prevBtn").addEventListener("click", prev);
+    document.getElementById("infoBtn").addEventListener("click", toggleInfo);
+
+    // 키보드 접근성: 좌우 화살표 & i 또는 Enter for info
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "i" || e.key === "I" || e.key === "Enter") {
+        // 포커스가 버튼 위에 있을 때만 정보 토글
+        const active = document.activeElement;
+        if (active === document.getElementById("infoBtn") || active === document.body) {
+          toggleInfo();
+        }
+      }
+    });
   </script>
 </body>
 </html>
