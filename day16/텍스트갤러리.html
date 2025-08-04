@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let message=[];
+        let index=0;
+        function aa(){
+            // 문서가 로드되었을 떄 갤러리 내용을 가져와서 배열로 만들기
+            // 배열의 첫번째요소가 갤러리에 보이기
+            // 입력 : x
+            // 반환 : x
+            let items=document.querySelectorAll(".gallery > div");
+            for( let i=0; i<items.length;i++){
+                const item=items[i];
+                console.log(item,i);
+                message.push(item.textContent);
+                
+        }
+        console.log(message);
+        const gallery=document.querySelectorAll(".gallery");
+        gallery.textContent =message[0];
+    }
+        //갤러기 배열의 다음 텍스트가 나오게 하기
+        function next(){
+            index++;
+            if(index>=message.length){
+                index=0;
+            }
+            const gallery=document.querySelector(".gallery");
+            gallery.textContent.message[0];
+            console.log(index);
+        }
+    </script>
+</head>
+<body onload="aa()">
+    <div class="gallery-wrap">
+        <div class="gallery">
+            <div>하하</div>
+            <div>깔깔</div>
+            <div>껄껄</div>
+        </div>
+    </div>
+
+    <button onclick="next()">다음</button>
+</body>
+</html>

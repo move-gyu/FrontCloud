@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+        width: 1200px;
+        height: 100px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: space-evenly; /* 양 끝 붙이고 사이만 균등 */
+        align-items: center;
+        }   
+        .a{
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+            position: relative;
+            text-align: center;
+            /*overflow: hidden;*/
+            
+            
+        }
+
+        .aa{
+           
+            border: 1px solid black;
+            position: absolute;
+            width: 100%;
+            height: 350px;
+            box-sizing: border-box; 
+            margin-top: -100%;
+            
+        }
+        .aa img{
+            width: 200px;
+            height: 250px;
+            align-items:center;
+            justify-content: center;
+            transition: 1s;
+        }
+        .a:hover .aa{
+            bottom: 0;
+        }
+        .b{
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+        }.c{
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+        }.d{
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+        }.e{
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="a">세탁기
+           <div class="aa">
+            <img src="https://www.lge.co.kr/kr/images/washing-machines/md10517831/gallery/medium-interior01.jpg" alt="">
+            <p>세탁기</p>
+            <p>가격 : 1,390,000원</p>
+           </div>
+        </div>
+        <div class="b">건조기</div>
+        <div class="c">TV</div>
+        <div class="d">스타일러</div>
+        <div class="e">냉장고</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn-start">3초마다 텍스트가 바뀐다</button>
+    <button id="btn-close" onclick="stopChange()">그만</button>
+
+    <script>
+        const btnStart=document.getElementById("btn-start");
+        let intervalId;
+        btnStart.addEventListener("click",function(){
+            intervalId= setInterval(function(){
+                alert("바뀐다");
+
+            },3000);
+        });
+
+        const stop=document.getElementById("btn-close");
+        stop.addEventListener("click",function(){
+            clearInterval(intervalId);
+            
+        });
+    </script>
+</body>
+</html>
