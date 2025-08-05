@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 500px;
+            height: 600px;
+            border: 1px solid black;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        .imgWrap{
+            width: 350px;
+            height: 350px;
+            border: 1px solid black;
+            margin: 0 auto;
+            margin-top: 40px
+        }
+
+        .logininfo{
+            width: 450px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        input{
+            width: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+            margin-top: 5px;
+        }
+        .btn{
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+
+        }
+    </style>
+    <script>
+        function bt(){
+            const btn=document.f;
+            const uId=f.userId;
+            const uPw=f.userPw;
+            if(uId.value===""){
+                alert("아이디를 입력하세요");
+                uId.focus();
+            }else if(uPw.value===""){
+                alert("비밀번호를 입력하세요");
+                uPw.focus();
+            }else{
+                alert("로그인 성공");
+            }
+        }
+    </script>
+</head>
+<body>
+    
+        <div class="wrap">
+            <div class="imgWrap"></div>
+
+            <form name="f" action="" method="get">
+            <div class="logininfo">
+                <input type="text" name="userId">
+                <input type="password" name="userPw">
+                <button class="btn" onclick="bt()">로그인</button>
+            </div>
+            </form>
+        </div>
+    
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            height: 100px;
+            background-color: beige;
+            display: flex;
+            position: static;
+        }
+        .icon{
+            width: 200px;
+            height: 70px;
+            border: 1px solid black;
+            position: absolute;
+            left: 10px;
+            top: 20px;
+            background-image: url("data:image/png;base64,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");
+            background-position: center;
+            background-size: cover;
+        }
+        .searchBar{
+            width: 200px;
+            height: 30px;
+            border: 1px solid black;
+            position: absolute;
+            right: 40px;
+            top: 60px;
+            display: flex;
+        }
+
+        .searchBar input{
+            width: 150px;
+            border: none;
+            outline: none;
+        }
+
+
+        .btn{
+            width: 50px;
+            height: 30px;
+            
+        }
+        nav{
+            height: 50px;
+            background-color: blueviolet;
+            
+        }
+        nav ul{
+            display: flex;
+            margin: 0;
+            align-items: center;
+            height: 100%;
+        }
+        nav li{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content:center ;
+            
+            height: 100%;
+            padding-right: 10px;
+        }
+
+        section{
+            height: 500px;
+            background-color: aqua;
+            display: flex;
+            justify-content:center ;
+            align-items: center;
+            gap: 50px;
+        }
+
+        
+        .wrap{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            display: flex;
+            justify-content:center ;
+            align-items: center;
+            
+        }
+
+
+        footer{
+            height: 100px;
+            background-color: blue;
+            display: flex;
+        }
+        .f-wrap{
+            width: 33%;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="icon"></div>
+        <div class="searchBar">
+            <input type="text">
+            <button class="btn">검색</button>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="">로그인</a></li>
+            <li>회원가입</li>
+            <li>홈으로</li>
+        </ul>
+    </nav>
+
+    <section>
+        <div class="wrap">여긴</div>
+        <div class="wrap">사진</div>
+        <div class="wrap">등등</div>
+    </section>
+
+    <footer>
+        <div class="f-wrap">1</div>
+        <div class="f-wrap">2</div>
+        <div class="f-wrap">3</div>
+    </footer>
+</body>
+</html>
