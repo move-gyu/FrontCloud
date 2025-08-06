@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>상품 리스트</title>
+  <style>
+    ul.product-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    li.product-box {
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    li.product-box a {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+    }
+
+    .img-box img {
+      width: 100%;
+      height: auto;
+      transition: 0.3s;
+    }
+
+    .name-box {
+      padding: 10px;
+    }
+
+    .name-box p {
+      font-size: 14px;
+      color: #888;
+      margin: 0;
+    }
+
+    .name-box h3 {
+      font-size: 16px;
+      margin: 5px 0 0;
+    }
+  </style>
+</head>
+<body>
+
+  <ul class="product-list">
+    <li class="product-box">
+      <a href="#">
+        <div class="img-box">
+          <img
+            src="https://image2.lotteimall.com/goods/09/05/31/2981310509_14.jpg/dims/resizemc/640x360/optimize"
+            data-original="https://image2.lotteimall.com/goods/09/05/31/2981310509_14.jpg/dims/resizemc/640x360/optimize"
+            data-hover="https://image2.lotteimall.com/goods/84/87/95/3065958784_14.jpg/dims/resizemc/640x360/optimize"
+            alt="화이트모카강냉이"
+          >
+        </div>
+        <div class="name-box">
+          <p>라이프스타일</p>
+          <h3>화이트 모카 강냉이</h3>
+        </div>
+      </a>
+
+      
+    </li>
+
+    <!-- 필요하면 여기 상품 <li>를 추가하세요 -->
+  </ul>
+
+  <script>
+    // 모든 상품 이미지에 hover 이벤트 적용
+    const productImages = document.querySelectorAll('.product-box img');
+
+    productImages.forEach(img => {
+      img.addEventListener('mouseenter', () => {
+        const hoverSrc = img.dataset.hover;
+        if (hoverSrc) img.src = hoverSrc;
+      });
+
+      img.addEventListener('mouseleave', () => {
+        const originalSrc = img.dataset.original;
+        if (originalSrc) img.src = originalSrc;
+      });
+    });
+  </script>
+
+</body>
+</html>

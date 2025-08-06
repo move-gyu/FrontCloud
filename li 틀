@@ -1,0 +1,18 @@
+<li class="product-box">
+                    <a href="">
+                        <!--상품이미지-->
+                        <div class="img-box">
+                            <img src="" alt"상품이미지">
+                        </div>
+                        <!--상품이름-->
+                        <div class="name-box">
+                            <p></p>
+                            <h6></h6>
+                        </div>
+                        <!--히든영역-->
+                        <div class="hidden-box">
+                            <img src="" alt"히든이미지">
+                            <div class="hidden-text">카트에추가</div>
+                        </div>
+                    </a>
+                </li>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        nav {
+            height: 30px;
+        }
+
+        header {
+            height: 80px;
+            background-color:#f9f6f0 ;
+        }
+
+        /*메인 이미지 영역*/
+        .img-wrap {
+            position: absolute;
+            width: 100%;
+            height: 630px;
+            border: 0;
+            box-shadow: none;
+            border-radius: 0;
+            background-image: url("./img/메인이미지.webp");
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        /*메인 이미지안에 텍스트 영역*/
+        .imgWrap-text {
+            width: 431px;
+            color: white;
+            position: absolute;
+            top: 55%;
+            left: 4%;
+        }
+
+        .imgWrap-p {
+            font-size: 40px;
+        }
+
+
+        /*상품영역*/
+        .product-wrap {
+            width: 1450px;
+            /*border: 1px solid black;*/
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            column-gap: 20px;
+            row-gap: 30px;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+
+        /*상품 박스 CSS*/
+        .product-box {
+            width: 470px;
+            height: 610px;
+            background-color: #f9f6f0;
+            list-style: none;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-box a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /*히든영역*/
+        .hidden-box {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            transition: 0.s;
+            opacity: 0;
+            overflow: hidden;
+            
+        }
+
+        .hidden-box img:hover {
+            transform: scale(1.03);
+
+        }
+
+        .hidden-box img {
+            width: 100%;
+            height: 90%;
+            transition: 0.3s ease;
+        }
+
+        .hidden-text {
+            width: 100%;
+            height: 10%;
+            background-color: #545454;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .product-box:hover .hidden-box {
+            opacity: 1;
+        }
+
+       
+        /*상품이미지영역*/
+        .img-box {
+            width: 100%;
+            height: 70%;
+            /*border: 1px solid black;*/
+        }
+
+
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: black;
+        }
+
+        /*상품 이름 영역*/
+        .name-box {
+            width: 100%;
+            height: 30%;
+            /*border: 1px solid black;*/
+            text-align: center;
+            color: #333;
+        }
+
+        .name-box h6 {
+            font-size: 17px;
+        }
+
+        /*카드뱃지*/
+        .card-badge {
+            color: #fff;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 26px;
+            letter-spacing: 1.44px;
+            background: #545454;
+            position: absolute;
+            transform: rotate(45deg);
+            z-index: 1;
+            min-width: 180px;
+            right: -35px;
+            top: 41px;
+        }
+       
+        /*푸터영역*/
+        footer{
+            height: 50px;
+            background-color: #545454;
+        }
+    </style>
+</head>
+
+<body>
+    <nav></nav>
+    <header></header>
+
+    <!--이미지영역-->
+    <div class="img-wrap">
+        <div class="imgWrap-text">
+            <p class="imgWrap-p">신제품 및 베스트셀러</p>
+
+            <h5>5만원 이상 구매시 로고 파우치 증정 (8/4 소진시까지 | 콜드브루 캔 제외)</h5>
+        </div>
+    </div>
+
+    <!--상품영역-->
+    <div class="big-wrap">
+        <div class="middle-wrap">
+            <ul class="product-wrap">
+                <!--첫번째 줄-->
+                <li class="product-box">
+                    <a href="https://kr.bluebottlecoffee.com/products/white-mocha-korean-pop-corn">
+                        <!--상품이미지-->
+                        <div class="img-box">
+                            <img src="img/화이트모카강냉이.webp">
+                        </div>
+                        <!--상품이름-->
+                        <div class="name-box">
+                            <p>라이프스타일</p>
+                            <h6>화이트 모카 강냉이</h6>
+                        </div>
+                        <!--히든영역-->
+                        <div class="hidden-box">
+                            <img src="img/호버-화이트모카강냉이.jpeg">
+                            <div class="hidden-text">카트에추가 | 6,800원</div>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="product-box">
+                    <a href="https://kr.bluebottlecoffee.com/products/bluebottle-workout-bottle">
+                        <!--상품 이미지-->
+                        <div class="img-box">
+                            <img src="img/워크아웃보틀.webp">
+                        </div>
+                        <!--상품이름-->
+                        <div class="name-box">
+                            <p>텀블러</p>
+                            <h6>워크아웃 보틀 (480ml)</h6>
+                        </div>
+                        <!--신상 뱃지-->
+                        <div class="card-badge">신제품</div>
+                        <!--히든영역-->
+                        <div class="hidden-box">
+                            <img src="img/호버-워크아웃보틀.jpeg">
+                            <div class="hidden-text">카트에추가</div>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="product-box">
+                    <a href="https://kr.bluebottlecoffee.com/products/blue-bottle-coffee-goblet-glass">
+                        <!--상품이미지-->
+                        <div class="img-box">
+                            <img src="img/고블릿글라스.webp">
+                        </div>
+                        <!--상품이름-->
+                        <div class="name-box">
+                            <p>유리잔</p>
+                            <h6>고블릿 글라스 (355ml)</h6>
+                        </div>
+                        <!--신상 뱃지-->
+                        <div class="card-badge">신제품</div>
+                        <!--히든영역-->
+                        <div class="hidden-box">
+                            <img src="img/호버-고블릿글라스.webp">
+                            <div class="hidden-text">카트에추가</div>
+                        
+                        </div>
+                    </a>
+                </li>
+
+
+                
+            </ul>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+
+</html>

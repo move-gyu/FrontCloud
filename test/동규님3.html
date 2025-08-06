@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>상품 리스트</title>
+  <style>
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .product-item {
+      width: 200px;
+      text-align: center;
+    }
+    .product-item img {
+      width: 100%;
+      height: auto;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .product-name {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="product-list" id="productList"></div>
+
+  <script>
+    // 상품 리스트 데이터
+    const products = [
+      {
+        name: "상품 1",
+        img: "https://image2.lotteimall.com/goods/77/98/14/3066149877_14.jpg/dims/resizemc/640x360/optimize",
+        hoverImg: "https://image2.lotteimall.com/goods/09/05/31/2981310509_14.jpg/dims/resizemc/640x360/optimize"
+      },
+       {
+        name: "상품 1",
+        img: "https://image2.lotteimall.com/goods/47/42/02/1192024247_14.jpg/dims/resizemc/640x360/optimize",
+        hoverImg: "https://image2.lotteimall.com/goods/84/87/95/3065958784_14.jpg/dims/resizemc/640x360/optimize"
+      },
+       
+    ];
+
+    const productList = document.getElementById('productList');
+
+    products.forEach(product => {
+      // 상품 요소 생성
+      const item = document.createElement('div');
+      item.className = 'product-item';
+
+      const img = document.createElement('img');
+      img.src = product.img;
+      img.alt = product.name;
+
+      // 호버시 이미지 변경
+      img.addEventListener('mouseenter', () => {
+        img.src = product.hoverImg;
+      });
+      img.addEventListener('mouseleave', () => {
+        img.src = product.img;
+      });
+
+      const name = document.createElement('div');
+      name.className = 'product-name';
+      name.textContent = product.name;
+
+      item.appendChild(img);
+      item.appendChild(name);
+      productList.appendChild(item);
+    });
+  </script>
+
+</body>
+</html>
