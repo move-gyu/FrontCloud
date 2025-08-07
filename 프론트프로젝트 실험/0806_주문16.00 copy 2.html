@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문창</title>
+    <style>
+        nav {
+            height: 20px;
+        }
+
+        header {
+            height: 80px;
+        }
+
+        .big-wrap {
+            height: 750px;
+            background-color: #f9f6f0;
+        }
+
+        .middle-wrap {
+            width: 1500px;
+            height: 750px;
+            /*border: 1px solid black;*/
+            display: flex;
+            margin: 0 auto;
+        }
+
+        /*이미지영역*/
+        .img-wrap {
+            width: 750px;
+            height: 750px;
+            /*border: 1px solid black;*/
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /*상품 이미지박스*/
+        .img-box {
+            width: 100%;
+            height: 95%;
+            background-image: url('./img이동규/화이트모카강냉이.webp');
+            background-position: center;
+            background-size: cover;
+            /*border: 1px solid black;*/
+        }
+
+        /*상품 이미지 크기조절*/
+        .img-box img {
+            width: 90%;
+            height: 90%;
+            padding: 30px;
+        }
+
+        /*이미지 넘길 버튼영역*/
+
+
+        .next-btn {
+            width: 70px;
+            height: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: white;
+            color: #545454;
+            border: none;
+            position: absolute;
+            right: 0;
+            bottom: 50%;
+            cursor: pointer;
+            display: none;
+        }
+
+        .prev-btn {
+            width: 70px;
+            height: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: white;
+            color: #545454;
+            border: none;
+            position: absolute;
+            left: 0;
+            bottom: 50%;
+            cursor: pointer;
+            display: none;
+        }
+
+        .img-btn {
+            border: none;
+            cursor: pointer;
+            background-color: #f9f6f0;
+            color: ;
+        }
+
+        /*이미지 버튼 호버*/
+        .img-wrap:hover .next-btn,
+        .img-wrap:hover .prev-btn {
+            display: block;
+        }
+
+        /*상품정보 영역*/
+        .order-wrap {
+            width: 750px;
+            height: 750px;
+            /*border: 1px solid black;*/
+        }
+
+        /*상품정보*/
+        .product {
+            width: 400px;
+
+            margin: 0 auto;
+            margin-top: 200px;
+            color: #545454;
+        }
+
+        /*상품 이름 키우기*/
+        .proP {
+            font-size: 32px;
+        }
+
+        /*수량 선택 및 결제*/
+        .product-order {
+            width: 400px;
+            height: 50px;
+            /*border: 1px solid black;*/
+            margin: 0 auto;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /*수량선택*/
+        .amount {
+            width: 100px;
+            height: 50px;
+            background-color: white;
+            appearance: none;
+            text-align: center;
+            margin-left: -20px;
+        }
+
+        /*결제 버튼*/
+        .order-btn {
+            width: 280px;
+            height: 50px;
+            margin: 0;
+            border: none;
+            background-color: #545454;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .login-popup {
+            /* fixed로 고정하고 top right 값을 조절해서 화면 밖으로 나가게 함 */
+            position: fixed;
+            top: 0;
+            right: -1800px;
+            width: 620px;
+            height: 864px;
+            padding-top: 104px;
+            transition: right 0.3s ease;
+            background-color: #FDFBF7;
+            z-index: 1001;
+            /* 오버레이보다 위에 */
+        }
+
+        /* 여기 두 개가 중요함
+      클래스가 추가 되면서 active 클래스가 추가 되어서 위치가 원래대로 돌아옴
+    */
+        .login-popup.active {
+            right: 0;
+            background-color: #FDFBF7;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 50px;
+            top: 40px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .login-page {
+            width: 367px;
+            height: 577px;
+            padding: 0 112px;
+        }
+
+        .overlay {
+            /* 전체 화면을 덮는 설정 */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* 반투명 검은색 */
+            /* 처음엔 안 보이게 */
+            display: none;
+        }
+
+        /*카트 영역*/
+        .cart-wrap {
+            width: 480px;
+            height: 900px;
+            /*border: 1px solid black;*/
+            margin-left: -30px;
+            margin-top: -30px;
+            color: #545454;
+        }
+
+        .cart-box1 {
+            height: 50px;
+            font-size: 30px;
+            margin-top: -20px;
+            color: #545454;
+        }
+
+        .cart-box2 {
+            height: 30px;
+            font-size: 15px;
+            color: #545454;
+        }
+
+        .row {
+            height: 9px;
+            background-color: #9fdaeb;
+            border-radius: 40px;
+            margin-top: 10px;
+            color: #545454;
+
+        }
+
+        .cart-box3 {
+            font-size: 10px;
+            background-color: white;
+            /*margin-top: 30px;*/
+            height: 70px;
+            line-height: 29px;
+        }
+
+        .cart-box3 p {
+            margin-left: 15px;
+        }
+
+        .cart-box4 {
+            height: 360px;
+            /*border: 1px solid black;*/
+        }
+
+        .cart-box4 ul {
+            list-style: none;
+            margin: 3px;
+            padding: 3px;
+        }
+
+        .list-box {
+            display: flex;
+        }
+
+        .img-list {
+            width: 160px;
+            height: 160px;
+            /*border: 1px solid black;*/
+            background-image: url('./img이동규/화이트모카강냉이.webp');
+            background-position: center;
+            background-size: cover;
+        }
+
+        .text-list {
+            width: 190px;
+            height: 160px;
+            /*border: 1px solid black;*/
+            text-align: center;
+            line-height: 170px;
+        }
+
+        .price-list {
+            width: 100px;
+            height: 160px;
+            /*border: 1px solid black;*/
+            text-align: center;
+            line-height: 170px;
+        }
+
+        .cart-box5 {
+            height: 100px;
+            /*border: 1px solid black;*/
+        }
+
+        .price-box {
+            width: 100%;
+            height: 33.3%;
+            /*border: 1px solid black;*/
+            box-sizing: border-box;
+            display: flex;
+        }
+
+        .price-box-text {
+            width: 50%;
+            height: 100%;
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        .price-box-price {
+            width: 50%;
+            height: 100%;
+            text-align: right;
+            box-sizing: border-box;
+        }
+
+        /*결제버튼*/
+        .pay-btn {
+            width: 100%;
+            height: 50px;
+            border: none;
+            background-color: #545454;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+
+        }
+    </style>
+
+    <!--스크립트-->
+    <script>
+        let 화이트모카강냉이 = ["img이동규/화이트모카강냉이.webp", "img이동규/호버-화이트모카강냉이.jpeg"];
+
+        let index = 0;
+        function next() {
+            // alert("djdjf");+
+            index++;  // index = index+1;
+
+
+            if (index >= 화이트모카강냉이.length) {
+                index = 0;
+            }
+
+            const gallery = document.querySelector(".img-box");
+            gallery.style.backgroundImage = "url(" + 화이트모카강냉이[index] + ")";
+            gallery.style.backgroundPosition = "center"
+            gallery.style.backgroundSize = "cover";
+        }
+
+        function prev() {
+            // alert("djdjf");
+            index--;  // index = index+1;
+
+            if (index < 0) {
+                index = 화이트모카강냉이.length - 1;
+            }
+            const gallery = document.querySelector(".img-box");
+            gallery.style.backgroundImage = "url(" + 화이트모카강냉이[index] + ")";
+            gallery.style.backgroundPosition = "center"
+            gallery.style.backgroundSize = "cover";
+
+        }
+
+        // 로그인 창 나오게 하는 함수
+        function loginPopUp() {
+            const loginPopup = document.querySelector(".login-popup");
+            const overlay = document.querySelector(".overlay");
+            loginPopup.classList.add("active"); // 클래스명만, 변수명 통일
+            overlay.classList.add("active")
+        }
+
+        function closeLogin() {
+            const loginPopup = document.querySelector(".login-popup");
+            const overlay = document.querySelector(".overlay");
+            loginPopup.classList.remove("active"); // 클래스명만, 변수명 통일
+            overlay.classList.remove("active")
+        };
+
+        /*총금액 계산하기*/
+        const unitPrice = 6800;
+        const deliveryFee = 2500;
+
+        function calculateTotal() {
+            const amount = parseInt(document.getElementById("amount").value);
+            const total = (unitPrice * amount) + deliveryFee;
+
+            // 수량 출력 업데이트
+            const quantityElement = document.querySelectorAll('.price-box-price')[0];
+            quantityElement.textContent = amount;
+
+            // 총 금액 칸 업데이트
+            const totalElement = document.querySelectorAll('.price-box-price')[2];
+            totalElement.textContent = "₩" + total.toLocaleString();
+        }
+
+        // 카트 열릴 때도 계산 자동 실행
+        function loginPopUp() {
+            const loginPopup = document.querySelector(".login-popup");
+            const overlay = document.querySelector(".overlay");
+            loginPopup.classList.add("active");
+            overlay.classList.add("active");
+
+            calculateTotal(); // 카트 열리면 자동 계산
+        }
+    </script>
+</head>
+
+<body>
+    <nav></nav>
+    <header></header>
+    <!--큰 틀-->
+    <div class="big-wrap">
+        <!--카트 띄우기-->
+        <div class="overlay"></div>
+
+        <div class="login-popup">
+            <button class="close-btn" onclick="closeLogin()">닫기x</button>
+            <div class="login-page">
+                <div class="cart-wrap">
+                    <div class="cart-box1">
+                        <p>카트</p>
+                    </div>
+                    <div class="cart-box2">
+                        <!--<p>무료배송입니다.</p>-->
+                        <div class="row"></div>
+                    </div>
+                    <div class="cart-box3">
+                        <p>한정 기간 특별 혜택</p>
+                        <p>5만원 이상 구매 시 로고 파우치 증정 (8/4-소진시까지 │ 콜드브루 캔 제외)</p>
+                    </div>
+                    <div class="cart-box4">
+                        <ul>
+                            <div class="list-box">
+                                <li class="img-list"></li>
+                                <li class="text-list">화이트 모카 강냉이</li>
+                                <li class="price-list">₩6,800</li>
+                            </div>
+                            <hr>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="cart-box5">
+                        <div class="price-box">
+                            <div class="price-box-text">수량</div>
+                            <div class="price-box-price">1</div>
+                        </div>
+                        <div class="price-box">
+                            <div class="price-box-text">배송비</div>
+                            <div class="price-box-price">₩2,500</div>
+                        </div>
+                        <div class="price-box">
+                            <div class="price-box-text">총 금액</div>
+                            <div class="price-box-price">₩?</div>
+                        </div>
+                    </div>
+                    <button class="pay-btn">결제</button>
+
+                </div>
+            </div>
+        </div>
+
+        <!--결제 영역-->
+        <div class="middle-wrap">
+            <!--이미지 영역-->
+            <div class="img-wrap">
+                <!--이미지 넘길 버튼-->
+                <button class="next-btn" onclick="next()">→</button>
+                <button class="prev-btn" onclick="prev()">←</button>
+                <div class="img-box">
+                    <!-- <img src="./img/화이트모카강냉이.webp" alt="이미지">-->
+                </div>
+
+            </div>
+            <!--오더 영역-->
+            <div class="order-wrap">
+                <div class="product">
+                    <p class="proP">화이트 모카 강냉이</p>
+                    <p>한국인의 일상에서 빼놓을 수 없는 커피, 그리고 한국을<br> 대표하는
+                        스트릿 푸드 강냉이가 만났습니다. 블루보틀의<br>벨라 도노반 원두를
+                        화이트 초콜릿으로 감싸고, 프랑스<br> 천일염 겔랑드 소금으로 감칠맛
+                        을 더해 완성했습니다.<br> <br>은은한 모카 향과 바삭한 식감, 씹을수록 고
+                        소한 풍미가<br> 조화를 이루는 특별한 간식입니다.<br><br>
+
+                        상품은 평균 1~3 영업일 내에 출고 됩니다.</p>
+                </div>
+                <div class="product-order">
+                    <label for="수량"></label>
+                    <select id="amount" name="수량" class="amount" onchange="calculateTotal()">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                    <button class="order-btn" onclick="loginPopUp()">카트에 추가 &nbsp; | &nbsp;₩6,800</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
